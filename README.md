@@ -1,4 +1,4 @@
-![huoyaxiaotu]("http://rubyeye-rubyeye.stor.sinaapp.com/qrcode_for_gh_1c69999308d6_430.jpg" "huoyaxiaotu")
+<img src="http://rubyeye-rubyeye.stor.sinaapp.com/qrcode_for_gh_1c69999308d6_430.jpg" alt="huoyaxiaotu"/>
 
 
 WeChat Api
