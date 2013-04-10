@@ -1,5 +1,6 @@
 <?php
-class weixin
+require 'weixin.config.php';
+class wxmessage
 {
     const MSG_TYPE_TEXT = 'text';
     const MSG_TYPE_IMAGE='image';
@@ -16,7 +17,7 @@ class weixin
     
     public function __construct($token)
     {
-        if (empty($token))
+        if (! defined('TOKEN'))
             throw new Exception('Token is required');
         
         if (method_exists($this, 'errorHandler'))
@@ -25,7 +26,7 @@ class weixin
         if (method_exists($this, 'exceptionHandler'))
             set_exception_handler(array($this, 'exceptionHandler'));
         
-        $this->_token = $token;
+        $this->_token = TOKEN;
         $this->parsePostRequestData();
     }
     
@@ -238,5 +239,95 @@ class weixin
         }    
         exit(0);
     }
+}
+
+/**
+* POST data
+*/
+function curl_post($remote_server, $post_string){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $remote_server);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+
+
+}
+/**
+*WeChat general interface
+*/
+class wxcommon{
+
+  /**
+  * get the Token¡£
+  *@return {"access_token":"ACCESS_TOKEN","expires_in":7200} or false
+  */
+  public static function getToken(){
+  $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".APPID."&secret=".APPSECRET;
+  $content=file_get_contents($url);
+  $ret=json_decode($content,true);
+    if(array_key_exists('errcode',$ret)){
+        return false;
+    }else{
+    	return $ret;
+    }
+  }
+
+}
+
+/**
+*WeChat Custom Menu
+*/
+class wxmenu{
+
+	/**
+	*create the menu
+	*@return true or false
+	*/
+  public static function createMenu($menu){
+  $url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".ACCESS_TOKEN;
+  $content=curl_post($url,$menu);
+  $ret=json_decode($content,true);
+    if($ret['errcode']==0){
+        return true;
+    }else{
+    	return false;
+    }
+    
+	
+  }
+  
+  /**
+	*get the menu
+	*@return menu in json,or false
+	*/
+  public static function getMenu(){  
+  $url="https://api.weixin.qq.com/cgi-bin/menu/get?access_token=".ACCESS_TOKEN;
+  $content=file_get_contents($url);
+  $ret=json_decode($content,true);
+    if(array_key_exists('errcode',$ret)){
+        return false;
+    }else{
+    	return $ret;
+    }
+  }
+  
+  /**
+  *delete the menu
+  *@return true or false
+  */
+  public static function deleteMenu(){
+  $url="https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=".ACCESS_TOKEN;
+  $content=file_get_contents($url);
+  $ret=json_decode($content,true);
+  if($ret['errcode']==0){
+        return true;
+    }else{
+    	return false;
+    }
+  
+  }
 }
 

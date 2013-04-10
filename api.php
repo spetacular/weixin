@@ -7,7 +7,6 @@
  */
 
 require 'defaultweixin.php';
-$token = 'Your Token';
-$weixin = new DefaultWeixin($token);
+$weixin = new DefaultWeixin();
 $weixin->run();
 exit(0);

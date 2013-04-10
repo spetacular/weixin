@@ -2,7 +2,7 @@
 
 require 'weixin.class.php';
 
-class DefaultWeixin extends weixin {
+class DefaultWeixin extends wxmessage {
 
 
     public function processRequest($data) {
