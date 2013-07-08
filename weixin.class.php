@@ -326,9 +326,9 @@ private $_ACCESS_TOKEN;
   $url="https://api.weixin.qq.com/cgi-bin/menu/get?access_token=".$this->_ACCESS_TOKEN;
   $content=file_get_contents($url);
   if(strpos($content, 'errcode') === false){
-	return false;
+	return $content;
   }else{
-	  return $content;
+	  return false;
   }
   }
   
