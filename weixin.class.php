@@ -336,7 +336,7 @@ private $_ACCESS_TOKEN;
   *delete the menu
   *@return true or false
   */
-  public static function deleteMenu(){
+  public function deleteMenu(){
   $url="https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=".$this->_ACCESS_TOKEN;
   $content=file_get_contents($url);
   $ret=json_decode($content,true);
