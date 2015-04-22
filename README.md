@@ -51,8 +51,15 @@ api.php为自定义回复接口，menu.php为菜单操作.
 
 一些网友发现部署上有困难，这里以在SAE上部署为例说明一下。
 假设域名是abc.sinaapp.com，配置主要注意以下几点：
+
 1.首先将文件上传代码到根目录下
+
 2.在浏览器中打开链接：abc.sinaapp.com/api.php，看是否能访问。
+
 3.编辑weixin.config.php文件，把token等参数换成自己的。
 
 完成以上三步就OK了。
+
+# 3. 乱码问题 #
+有时部署代码并关注微信号后，发现回复内容是乱码。这是由于微信API采用JSON字符串传递参数，而JSON默认是UTF8编码的。这时请将defaultweixin.php的编码改成utf-8.
+

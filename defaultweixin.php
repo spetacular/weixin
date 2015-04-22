@@ -27,7 +27,7 @@ class DefaultWeixin extends wxmessage {
                    $this->xiaohua();
                    break;
                 default:
-              $this->xiaohua();
+              $this->text($input);
                 break;
                    
             }         
