@@ -15,7 +15,7 @@ class wxmessage
     private $_postData;
     private $_token;
     
-    public function __construct($token)
+    public function __construct()
     {
         if (! defined('TOKEN'))
             throw new Exception('Token is required');
