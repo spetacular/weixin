@@ -35,7 +35,9 @@ api.php为自定义回复接口，menu.php为菜单操作.
 
 常见问题
 ======
-1.出现PHP Warning:  file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? in D:\weixin.class.php on line 269
+# 1.SSL扩展 #
+
+出现PHP Warning:  file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? in D:\weixin.class.php on line 269
 
 解决方法：出现这个问题是服务器没有开启ssl支持。请在php.ini中加入
 
@@ -44,3 +46,13 @@ api.php为自定义回复接口，menu.php为菜单操作.
  allow_url_include = On
  
 重启服务器即可
+
+# 2.代码部署 #
+
+一些网友发现部署上有困难，这里以在SAE上部署为例说明一下。
+假设域名是abc.sinaapp.com，配置主要注意以下几点：
+1.首先将文件上传代码到根目录下
+2.在浏览器中打开链接：abc.sinaapp.com/api.php，看是否能访问。
+3.编辑weixin.config.php文件，把token等参数换成自己的。
+
+完成以上三步就OK了。
