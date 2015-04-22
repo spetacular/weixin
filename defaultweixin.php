@@ -51,10 +51,10 @@ class DefaultWeixin extends wxmessage {
      * return news
      */
     private function fulinews() {
-        $text = 'QQ»Æ×ê¡¢À¶×ê¡¢ºì×ê¡¢ÂÌ×ê»ò10Q±ÒÈÎÑ¡ÆäÒ»';
+        $text = 'QQé»„é’»ã€è“é’»ã€çº¢é’»ã€ç»¿é’»æˆ–10Qå¸ä»»é€‰å…¶ä¸€';
         $posts = array(
             array(
-                'title' => '¸£ÀûÀ´ÁË',
+                'title' => 'ç¦åˆ©æ¥äº†',
                 'discription' => $text,
                 'picurl' => 'http://mmsns.qpic.cn/mmsns/XWia2Xj7RZ8mhQaESostBicFaX2HjVBbJYKKCBk9PkuicKrSZdfNL7XAw/0',
                 'url' => 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MDE4Njg2MQ==&appmsgid=10000009&itemidx=1#wechat_redirect',
@@ -78,7 +78,7 @@ class DefaultWeixin extends wxmessage {
      * return jokes
      */
     private function xiaohua() {
-        $text = "ÄãºÃ£¬Ç×°®µÄÅóÓÑ£¬ÎÒ¿ÉÄÜ²»ÔÚµçÄÔÅÔ¡£ÏÈ¿´¸öÐ¦»°°É¡£ÓÐ¸öÐ¡¹ÃÄï´©ÁËÒ»¼þ°×É«´óÒÂÔÚµÈ³µ£¬Ò»¸öÐÜº¢×Ó°ÑÇÉ¿ËÁ¦Ñ©¸âÕû¸öÅÄËýÉíÉÏÁË£¬º¢×ÓËûÂèËµ¶Ô²»Æðº¢×ÓºÜÆ¤£¬¹ÃÄï¶×ÏÂÉíºÍ°ªµÄËµ£ºÐ¡ÅóÓÑ£¬ÎÒÃÇÀ­¹³£¬ÒÔºóË­ÔÚ´óÂíÂ·ÉÏÏ¹ÄÖË­¾ÍËÀÈ«¼ÒºÃ²»ºÃ£¿º¢×ÓËûÂèÏÅÄòÁË~";
+        $text = "ä½ å¥½ï¼Œäº²çˆ±çš„æœ‹å‹ï¼Œæˆ‘å¯èƒ½ä¸åœ¨ç”µè„‘æ—ã€‚å…ˆçœ‹ä¸ªç¬‘è¯å§ã€‚æœ‰ä¸ªå°å§‘å¨˜ç©¿äº†ä¸€ä»¶ç™½è‰²å¤§è¡£åœ¨ç­‰è½¦ï¼Œä¸€ä¸ªç†Šå­©å­æŠŠå·§å…‹åŠ›é›ªç³•æ•´ä¸ªæ‹å¥¹èº«ä¸Šäº†ï¼Œå­©å­ä»–å¦ˆè¯´å¯¹ä¸èµ·å­©å­å¾ˆçš®ï¼Œå§‘å¨˜è¹²ä¸‹èº«å’Œè”¼çš„è¯´ï¼šå°æœ‹å‹ï¼Œæˆ‘ä»¬æ‹‰é’©ï¼Œä»¥åŽè°åœ¨å¤§é©¬è·¯ä¸ŠçžŽé—¹è°å°±æ­»å…¨å®¶å¥½ä¸å¥½ï¼Ÿå­©å­ä»–å¦ˆå“å°¿äº†~";
         $xml = $this->outputText($text);
         header('Content-Type: application/xml');
         echo $xml;
@@ -88,8 +88,8 @@ class DefaultWeixin extends wxmessage {
      * return welcome msg
      */
     private function welcome() {
-        $text = "Ç×°®µÄÅóÓÑ£¬»¶Ó­¹Ø×¢ÍÃ×Ó¡£»Ø¸´¡°news¡±¿´¿´ÍÃ×ÓµÄ10ÔªQ±ÒÐ¡Àñ°É¡£";
-        // outputText ÓÃÀ´·µ»ØÎÄ±¾ÐÅÏ¢
+        $text = "äº²çˆ±çš„æœ‹å‹ï¼Œæ¬¢è¿Žå…³æ³¨å…”å­ã€‚å›žå¤â€œnewsâ€çœ‹çœ‹å…”å­çš„10å…ƒQå¸å°ç¤¼å§ã€‚";
+        // outputText ç”¨æ¥è¿”å›žæ–‡æœ¬ä¿¡æ¯
         $xml = $this->outputText($text);
         header('Content-Type: application/xml');
         echo $xml;
@@ -97,8 +97,8 @@ class DefaultWeixin extends wxmessage {
 
     private function music() {
         $music = array(
-            'title' => 'ÔÚ´ºÌìÀï',
-            'discription' => 'ÔÚ´ºÌìÀï-Íô·å',
+            'title' => 'åœ¨æ˜¥å¤©é‡Œ',
+            'discription' => 'åœ¨æ˜¥å¤©é‡Œ-æ±ªå³°',
             'musicurl' => 'http://rubyeye-rubyeye.stor.sinaapp.com/inspring.wma',
             'hdmusicurl' => 'http://rubyeye-rubyeye.stor.sinaapp.com/inspring.mp3'
         );
@@ -110,8 +110,8 @@ class DefaultWeixin extends wxmessage {
 
     private function yishengmusic() {
         $music = array(
-            'title' => 'Ò»ÉúËù°®',
-            'discription' => 'ÎªÊ²Ã´Ñ¡ÕâÊ×¸èÄØ£¿ÒòÎªÎÒµÄÃÎÏëÊÇÓëÒ»ÉúËù°®µÄÈË¿ìÀÖÒ»Éú¡£ÄãµÄÄØ£¬Ç×°®µÄÅóÓÑ£¿',
+            'title' => 'ä¸€ç”Ÿæ‰€çˆ±',
+            'discription' => 'ä¸ºä»€ä¹ˆé€‰è¿™é¦–æ­Œå‘¢ï¼Ÿå› ä¸ºæˆ‘çš„æ¢¦æƒ³æ˜¯ä¸Žä¸€ç”Ÿæ‰€çˆ±çš„äººå¿«ä¹ä¸€ç”Ÿã€‚ä½ çš„å‘¢ï¼Œäº²çˆ±çš„æœ‹å‹ï¼Ÿ',
             'musicurl' => 'http://rubyeye-rubyeye.stor.sinaapp.com/song/%E5%8D%A2%E5%86%A0%E5%BB%B7-%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1.mp3',
             'hdmusicurl' => 'http://rubyeye-rubyeye.stor.sinaapp.com/song/%E5%8D%A2%E5%86%A0%E5%BB%B7-%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1.mp3'
         );
@@ -121,7 +121,7 @@ class DefaultWeixin extends wxmessage {
     }
 
     /**
-     * Pre processing£¬common usage:save the request into your database.
+     * Pre processingï¼Œcommon usage:save the request into your database.
 	 * Because weixin save your msgs only 5 days.
      * @return boolean
      */
