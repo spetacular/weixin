@@ -1,6 +1,3 @@
-<img src="http://rubyeye-rubyeye.stor.sinaapp.com/qrcode_for_gh_1c69999308d6_430.jpg" alt="huoyaxiaotu"/>
-
-
 WeChat Api
 ======
 This is an enclosed class for WeChat apis.
