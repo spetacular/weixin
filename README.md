@@ -14,7 +14,7 @@ Current version supports:
 ======
 微信公共平台api的php封装
 
-官方wiki在这里：[微信公共平台api](http://mp.weixin.qq.com/wiki/index.php "微信公共平台api")
+官方wiki在这里：[微信公共平台api](http://mp.weixin.qq.com/wiki/ "微信公共平台api")
 
 目前版本支持:
 1.消息接口 api
